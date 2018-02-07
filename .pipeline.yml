@@ -1,12 +1,13 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:0.2.0
-    cluster_name: "spark-pi-cluster"
-    cluster_provider: "google"
+    cluster_name: "sfpdcluster3"
+    cluster_provider: "amazon"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_monitoring:
+    image: banzaicloud/plugin-pipeline-client:0.2.0
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
@@ -18,16 +19,18 @@ pipeline:
     deployment_name: "banzaicloud-stable/spark-hs"
     deployment_release_name: "historyserver"
     deployment_values:
-    app:
-      logDirectory: s3a://spark-k8-logs/eventLog
+      app:
+        logDirectory: s3a://spark-k8-logs/eventLog
 
-    secrets: [plugin_endpoint, plugin_username, plugin_password, plugin_azure_storage_account, plugin_azure_storage_account_access_key]
+    secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_spark_resources:
-    image: banzaicloud/plugin-pipeline-client:0.2.0
+     image: banzaicloud/plugin-pipeline-client:0.2.0
 
-    deployment_name: "banzaicloud-stable/spark"
-    deployment_release_name: "spark"
+     deployment_name: "banzaicloud-stable/zeppelin-spark"
+     deployment_release_name: "release-1"
+
+     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   remote_checkout:
     image: banzaicloud/plugin-k8s-proxy:0.2.0
