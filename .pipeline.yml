@@ -1,8 +1,8 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:0.2.0
-    cluster_name: "sfpdcluster3"
-    cluster_provider: "amazon"
+    cluster_name: "lppicluster"
+    cluster_provider: "google"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
