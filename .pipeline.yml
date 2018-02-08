@@ -68,7 +68,7 @@ pipeline:
     spark_metrics_conf: /opt/spark/conf/metrics.properties
 
     spark_eventLog_enabled: true
-    spark.eventLog.dir: "gs://puski-testing/data"
+    spark_eventLog_dir: "gs://puski-testing/data"
 
     spark_app_source: target/spark-pi-1.0-SNAPSHOT.jar
     spark_app_args: 1000
