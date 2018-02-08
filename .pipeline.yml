@@ -1,6 +1,6 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:dev-9f63ec7
+    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
     cluster_name: "sparkpicluster01"
     cluster_provider: "google"
     google_project: "puski-test-194413"
@@ -8,14 +8,14 @@ pipeline:
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-9f63ec7
+    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_spark_history_server:
-    image: banzaicloud/plugin-pipeline-client:dev-5b30d4f
+    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
 
     deployment_name: "banzaicloud-stable/spark-hs"
     deployment_release_name: "historyserver"
@@ -26,7 +26,7 @@ pipeline:
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_spark_resources:
-     image: banzaicloud/plugin-pipeline-client:dev-9f63ec7
+     image: banzaicloud/plugin-pipeline-client:dev-66ffa94
 
      deployment_name: "banzaicloud-stable/spark"
      deployment_release_name: "release-1"
