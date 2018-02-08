@@ -4,12 +4,11 @@ pipeline:
     cluster_name: "lppicluster"
     cluster_provider: "google"
     google_project: "puski-test-194413"
-    cluster_location: "us-central1-a"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:0.2.0
+    image: banzaicloud/plugin-pipeline-client:dev-9f63ec7
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
@@ -27,9 +26,9 @@ pipeline:
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_spark_resources:
-     image: banzaicloud/plugin-pipeline-client:0.2.0
+     image: banzaicloud/plugin-pipeline-client:dev-9f63ec7
 
-     deployment_name: "banzaicloud-stable/zeppelin-spark"
+     deployment_name: "banzaicloud-stable/spark"
      deployment_release_name: "release-1"
 
      secrets: [plugin_endpoint, plugin_username, plugin_password]
