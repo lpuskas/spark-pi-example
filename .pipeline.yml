@@ -4,6 +4,7 @@ pipeline:
     cluster_name: "lppicluster"
     cluster_provider: "google"
     google_project: "puski-test-194413"
+    cluster_location: "us-central1-a"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
