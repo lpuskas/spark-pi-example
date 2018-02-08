@@ -21,7 +21,7 @@ pipeline:
     deployment_release_name: "historyserver"
     deployment_values:
       app:
-        logDirectory: s3a://spark-k8-logs/eventLog
+        logDirectory: "gs://puski-testing/data"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
@@ -66,7 +66,7 @@ pipeline:
     spark_metrics_conf: /opt/spark/conf/metrics.properties
 
     spark_eventLog_enabled: false
-    spark.eventLog.dir: "s3a://spark-k8-logs/eventLog"
+    spark.eventLog.dir: "gs://puski-testing/data"
 
     spark_app_source: target/spark-pi-1.0-SNAPSHOT.jar
     spark_app_args: 1000
