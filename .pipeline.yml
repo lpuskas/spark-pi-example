@@ -65,7 +65,7 @@ pipeline:
     spark_kubernetes_authenticate_driver_serviceaccount_name: "spark"
     spark_metrics_conf: /opt/spark/conf/metrics.properties
 
-    spark_eventLog_enabled: true
+    spark_eventLog_enabled: false
     spark.eventLog.dir: "s3a://spark-k8-logs/eventLog"
 
     spark_app_source: target/spark-pi-1.0-SNAPSHOT.jar
