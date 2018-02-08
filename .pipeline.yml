@@ -55,6 +55,7 @@ pipeline:
     spark_app_name: sparkpi
     spark_local_dir: /tmp/spark-local
     spark_packages: "com.google.cloud.bigdataoss:gcs-connector:1.6.3-hadoop2"
+    spark_exclude_packages: "org.apache.hadoop:hadoop-common,com.fasterxml.jackson.core:jackson-databind,com.fasterxml.jackson.core:jackson-annotations,com.fasterxml.jackson.core:jackson-core,org.apache.httpcomponents:httpclient,org.apache.httpcomponents:httpcore"
 
     spark_kubernetes_driver_docker_image: banzaicloud/spark-driver:v2.2.0-k8s-1.0.197
     spark_kubernetes_executor_docker_image: banzaicloud/spark-executor:v2.2.0-k8s-1.0.197
