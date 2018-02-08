@@ -3,6 +3,7 @@ pipeline:
     image: banzaicloud/plugin-pipeline-client:dev-9f63ec7
     cluster_name: "lppicluster"
     cluster_provider: "google"
+    google_project: "puski-test-194413"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
