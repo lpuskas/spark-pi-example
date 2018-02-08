@@ -1,6 +1,6 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:0.2.0
+    image: banzaicloud/plugin-pipeline-client:dev-5b30d4f
     cluster_name: "lppicluster"
     cluster_provider: "google"
 
