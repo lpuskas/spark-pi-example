@@ -4,6 +4,7 @@ pipeline:
     cluster_name: "sparkpicluster02"
     cluster_provider: "google"
     google_project: "puski-test-194413"
+    google_gke_version: "1.8.7-gke.1"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
