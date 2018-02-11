@@ -1,7 +1,7 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:dev-66ffa94
-    cluster_name: "sparkpicluster01"
+    cluster_name: "sparkpicluster02"
     cluster_provider: "google"
     google_project: "puski-test-194413"
 
