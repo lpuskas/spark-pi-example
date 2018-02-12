@@ -49,5 +49,9 @@ pipeline:
     original_image: banzaicloud/plugin-spark-submit-k8s:dev-5246bc0
     pull: true
     
+    spark_submit_options:
+      class: banzaicloud.SparkPi
+      kubernetes-namespace: default
+    
     
  
