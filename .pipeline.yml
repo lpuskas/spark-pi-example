@@ -51,8 +51,8 @@ pipeline:
     
     spark_submit_options:
       options:
-        class: banzaicloud.SparkPi
-        kubernetes-namespace: default
+        class: 'banzaicloud.SparkPi'
+        kubernetes-namespace: 'default'
     
     
  
