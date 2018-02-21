@@ -8,44 +8,18 @@ pipeline:
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
-  install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
-    deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
-    deployment_release_name: "monitor"
-
-    secrets: [plugin_endpoint, plugin_username, plugin_password]
-
-  install_spark_history_server:
-    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
-
-    deployment_name: "banzaicloud-stable/spark-hs"
-    deployment_release_name: "historyserver"
-    deployment_values:
-      app:
-        logDirectory: "gs://puski-testing/data"
-
-    secrets: [plugin_endpoint, plugin_username, plugin_password]
-
-  install_spark_resources:
-     image: banzaicloud/plugin-pipeline-client:dev-66ffa94
-
-     deployment_name: "banzaicloud-stable/spark"
-     deployment_release_name: "release-1"
-
-     secrets: [plugin_endpoint, plugin_username, plugin_password]
-
   remote_checkout:
-    image: banzaicloud/plugin-k8s-proxy:dev-312f9e8
+    image: banzaicloud/plugin-k8s-proxy:dev-ec2c8b4
     original_image: plugins/git
 
   remote_build:
-    image: banzaicloud/plugin-k8s-proxy:dev-312f9e8
+    image: banzaicloud/plugin-k8s-proxy:dev-ec2c8b4
     original_image: maven:3.5-jdk-8
     original_commands:
       - mvn clean package
 
   run:
-    image: banzaicloud/plugin-k8s-proxy:dev-312f9e8
+    image: banzaicloud/plugin-k8s-proxy:dev-ec2c8b4
     original_image: banzaicloud/plugin-spark-submit-k8s:dev-5246bc0
     pull: true
     
