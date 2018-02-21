@@ -35,17 +35,17 @@ pipeline:
      secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   remote_checkout:
-    image: banzaicloud/plugin-k8s-proxy:dev-4b37d3e
+    image: banzaicloud/plugin-k8s-proxy:dev-312f9e8
     original_image: plugins/git
 
   remote_build:
-    image: banzaicloud/plugin-k8s-proxy:dev-4b37d3e
+    image: banzaicloud/plugin-k8s-proxy:dev-312f9e8
     original_image: maven:3.5-jdk-8
     original_commands:
       - mvn clean package
 
   run:
-    image: banzaicloud/plugin-k8s-proxy:dev-4b37d3e
+    image: banzaicloud/plugin-k8s-proxy:dev-312f9e8
     original_image: banzaicloud/plugin-spark-submit-k8s:dev-5246bc0
     pull: true
     
