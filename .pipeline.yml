@@ -46,7 +46,7 @@ pipeline:
 
   run:
     image: banzaicloud/plugin-k8s-proxy:dev-933b902
-    original_image: banzaicloud/plugin-spark-submit-k8s:dev-92da778
+    original_image: banzaicloud/plugin-spark-submit-k8s:dev-4156aa7
     pull: true
     
     spark_submit_options:
