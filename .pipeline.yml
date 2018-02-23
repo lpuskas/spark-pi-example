@@ -1,10 +1,11 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:dev-66ffa94
-    cluster_name: "sparkpicluster08"
+    cluster_name: "sparkpicluster09"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_gke_version: "1.8.7-gke.1"
+    google_node_count: "3"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
  
