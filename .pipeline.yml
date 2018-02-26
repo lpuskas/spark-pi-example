@@ -1,7 +1,7 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
-    cluster_name: "sparkpicluster09"
+    image: banzaicloud/plugin-pipeline-client:latest
+    cluster_name: "sparkpicluster10"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_gke_version: "1.8.7-gke.1"
@@ -10,14 +10,14 @@ pipeline:
     secrets: [plugin_endpoint, plugin_username, plugin_password]
  
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
+    image: banzaicloud/plugin-pipeline-client:latest
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_spark_history_server:
-    image: banzaicloud/plugin-pipeline-client:dev-66ffa94
+    image: banzaicloud/plugin-pipeline-client:latest
 
     deployment_name: "banzaicloud-stable/spark-hs"
     deployment_release_name: "historyserver"
@@ -28,7 +28,7 @@ pipeline:
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   install_spark_resources:
-     image: banzaicloud/plugin-pipeline-client:dev-66ffa94
+     image: banzaicloud/plugin-pipeline-client:latest
 
      deployment_name: "banzaicloud-stable/spark"
      deployment_release_name: "release-1"
@@ -36,19 +36,18 @@ pipeline:
      secrets: [plugin_endpoint, plugin_username, plugin_password]
 
   remote_checkout:
-    image: banzaicloud/plugin-k8s-proxy:dev-61990d0
+    image: banzaicloud/drone-plugin-k8s-client:latest
     original_image: plugins/git
 
   remote_build:
-    image: banzaicloud/plugin-k8s-proxy:dev-61990d0
+    image: banzaicloud/drone-plugin-k8s-client:latest
     original_image: maven:3.5-jdk-8
     original_commands:
       - mvn clean package
 
   run:
-    image: banzaicloud/plugin-k8s-proxy:dev-61990d0
-    original_image: banzaicloud/plugin-spark-submit-k8s:dev-alpha
-    pull: true
+    image: banzaicloud/drone-plugin-k8s-client:latest
+    original_image: banzaicloud/plugin-spark-submit-k8s:latest
     service_account: spark
     
     spark_submit_options:
