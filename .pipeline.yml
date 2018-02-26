@@ -48,7 +48,7 @@ pipeline:
   run:
     image: banzaicloud/drone-plugin-k8s-client:latest
     original_image: banzaicloud/plugin-spark-submit-k8s:latest
-    service_account: spark
+    proxy_service_account: spark
     
     spark_submit_options:
       class: banzaicloud.SparkPi
