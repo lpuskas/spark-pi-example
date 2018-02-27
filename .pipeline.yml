@@ -54,6 +54,7 @@ pipeline:
       class: banzaicloud.SparkPi
       kubernetes-namespace: default
       packages: com.google.cloud.bigdataoss:gcs-connector:1.7.0-hadoop2
+      exclude-packages: com.fasterxml.jackson.core:jackson-databind,com.fasterxml.jackson.core:jackson-annotations,com.fasterxml.jackson.core:jackson-core
     spark_submit_configs:
       spark.app.name: sparkpi
       spark.local.dir: /tmp/spark-locals
