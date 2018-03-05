@@ -1,6 +1,6 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:dev-d7690a1
+    image: banzaicloud/plugin-pipeline-client:dev-2168fe7
     cluster_name: "sparkpicluster11"
     cluster_provider: "google"
     google_project: "puski-test-194413"
@@ -10,7 +10,7 @@ pipeline:
     secrets: [plugin_endpoint, plugin_token]
  
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-6905178
+    image: banzaicloud/plugin-pipeline-client:dev-2168fe7
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
