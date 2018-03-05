@@ -7,7 +7,7 @@ pipeline:
     google_gke_version: "1.8.7-gke.1"
     google_node_count: "2"
 
-    secrets: [plugin_endpoint, plugin_username, plugin_password]
+    secrets: [plugin_endpoint, plugin_token]
  
   install_monitoring:
     image: banzaicloud/plugin-pipeline-client:latest
@@ -25,7 +25,7 @@ pipeline:
       app:
         logDirectory: "gs://puski-testing/data"
 
-    secrets: [plugin_endpoint, plugin_username, plugin_password]
+    secrets: [plugin_endpoint, plugin_token]
 
   install_spark_resources:
      image: banzaicloud/plugin-pipeline-client:latest
@@ -33,7 +33,7 @@ pipeline:
      deployment_name: "banzaicloud-stable/spark"
      deployment_release_name: "release-1"
 
-     secrets: [plugin_endpoint, plugin_username, plugin_password]
+     secrets: [plugin_endpoint, plugin_token]
 
   remote_checkout:
     image: banzaicloud/drone-plugin-k8s-client:latest
