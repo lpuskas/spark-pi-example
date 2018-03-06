@@ -1,7 +1,7 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:dev-e05127b
-    cluster_name: "sparkpicluster12"
+    cluster_name: "sparkpicluster13"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_gke_version: "1.8.7-gke.1"
