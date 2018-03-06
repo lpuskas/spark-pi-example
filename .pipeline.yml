@@ -13,6 +13,7 @@ pipeline:
     image: banzaicloud/plugin-pipeline-client:dev-1ee9b4b
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
+    log_level: "debug"
 
     secrets: [plugin_endpoint, plugin_username, plugin_password]
 
