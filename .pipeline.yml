@@ -1,7 +1,7 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:dev-db5437f
-    cluster_name: "sparkpicluster17"
+    image: banzaicloud/plugin-pipeline-client:latest
+    cluster_name: "sparkpicluster20"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_gke_version: "1.8.7-gke.1"
@@ -11,7 +11,7 @@ pipeline:
     secrets: [plugin_endpoint, plugin_token]
  
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-db5437f
+    image: banzaicloud/plugin-pipeline-client:latest
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
     log_level: "debug"
@@ -19,7 +19,7 @@ pipeline:
     secrets: [plugin_endpoint, plugin_token]
 
   install_spark_history_server:
-    image: banzaicloud/plugin-pipeline-client:dev-db5437f
+    image: banzaicloud/plugin-pipeline-client:latest
 
     deployment_name: "banzaicloud-stable/spark-hs"
     deployment_release_name: "historyserver"
@@ -30,7 +30,7 @@ pipeline:
     secrets: [plugin_endpoint, plugin_token]
 
   install_spark_resources:
-     image: banzaicloud/plugin-pipeline-client:dev-db5437f
+     image: banzaicloud/plugin-pipeline-client:latest
 
      deployment_name: "banzaicloud-stable/spark"
      deployment_release_name: "release-1"
@@ -55,14 +55,12 @@ pipeline:
     spark_submit_options:
       class: banzaicloud.SparkPi
       kubernetes-namespace: default
-      packages: com.google.cloud.bigdataoss:gcs-connector:1.7.0-hadoop2
-      exclude-packages: com.fasterxml.jackson.core:jackson-databind,com.fasterxml.jackson.core:jackson-annotations,com.fasterxml.jackson.core:jackson-core
     spark_submit_configs:
       spark.app.name: sparkpi
       spark.local.dir: /tmp/spark-locals
-      spark.kubernetes.driver.docker.image: banzaicloud/spark-driver:v2.2.0-k8s-1.0.197
-      spark.kubernetes.executor.docker.image: banzaicloud/spark-executor:v2.2.0-k8s-1.0.197
-      spark.kubernetes.initcontainer.docker.image: banzaicloud/spark-init:v2.2.0-k8s-1.0.197
+      spark.kubernetes.driver.docker.image: banzaicloud/spark-driver:v2.2.0-k8s-1.0.210
+      spark.kubernetes.executor.docker.image: banzaicloud/spark-executor:v2.2.0-k8s-1.0.210
+      spark.kubernetes.initcontainer.docker.image: banzaicloud/spark-init:v2.2.0-k8s-1.0.210
       spark.dynamicAllocation.enabled: "true"
       spark.kubernetes.resourceStagingServer.uri: http://spark-rss:10000
       spark.kubernetes.resourceStagingServer.internal.uri: http://spark-rss:10000
