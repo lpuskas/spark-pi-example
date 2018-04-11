@@ -5,6 +5,7 @@ pipeline:
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_node_count: "2"
+    log_level: debug
 
     secrets: [plugin_endpoint, plugin_token]
 
