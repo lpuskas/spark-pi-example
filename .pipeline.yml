@@ -1,25 +1,24 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:dev-31b2a68
+    image: banzaicloud/plugin-pipeline-client:dev-b5e2e54
     cluster_name: "lp-org"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_node_count: "1"
     google_gke_version: "1.9.4-gke.1"
     log_level: debug
-    cluster_state: deleted
 
     secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-31b2a68
+    image: banzaicloud/plugin-pipeline-client:dev-b5e2e54
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
     secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
   install_spark_resources:
-    image: banzaicloud/plugin-pipeline-client:dev-31b2a68
+    image: banzaicloud/plugin-pipeline-client:dev-b5e2e54
 
     deployment_name: "banzaicloud-stable/spark"
     deployment_release_name: "release-1"
