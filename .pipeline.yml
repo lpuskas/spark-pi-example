@@ -68,4 +68,3 @@ pipeline:
       - target/spark-pi-1.0-SNAPSHOT.jar
       - 1000
 
-
