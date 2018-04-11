@@ -1,23 +1,23 @@
 pipeline:
   create_cluster:
-    image: banzaicloud/plugin-pipeline-client:dev-366e5bb
+    image: banzaicloud/plugin-pipeline-client:dev-f31aeea
     cluster_name: "lp-org"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_node_count: "2"
     log_level: debug
 
-    secrets: [plugin_endpoint, plugin_token]
+    secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
   install_monitoring:
-    image: banzaicloud/plugin-pipeline-client:dev-366e5bb
+    image: banzaicloud/plugin-pipeline-client:dev-f31aeea
     deployment_name: "banzaicloud-stable/pipeline-cluster-monitor"
     deployment_release_name: "monitor"
 
-    secrets: [plugin_endpoint, plugin_token]
+    secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
   install_spark_resources:
-    image: banzaicloud/plugin-pipeline-client:dev-366e5bb
+    image: banzaicloud/plugin-pipeline-client:dev-f31aeea
 
     deployment_name: "banzaicloud-stable/spark"
     deployment_release_name: "release-1"
@@ -28,7 +28,7 @@ pipeline:
        app:
          logDirectory: "gs://puski-testing/pdidata"
 
-    secrets: [plugin_endpoint, plugin_token]
+    secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
   remote_checkout:
     image: banzaicloud/plugin-k8s-proxy:0.3.0
