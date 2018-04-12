@@ -1,7 +1,7 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:dev-b5e2e54
-    cluster_name: "lp-org-02"
+    cluster_name: "lp-org-03"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_node_count: "2"
