@@ -4,10 +4,10 @@ pipeline:
     cluster_name: "lp-org-02"
     cluster_provider: "google"
     google_project: "puski-test-194413"
-    google_node_count: "1"
+    google_node_count: "2"
     google_gke_version: "1.9.4-gke.1"
     log_level: debug
-    cluster_state: deleted
+#    cluster_state: deleted
 
     secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
