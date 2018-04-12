@@ -1,13 +1,13 @@
 pipeline:
   create_cluster:
     image: banzaicloud/plugin-pipeline-client:dev-b5e2e54
-    cluster_name: "lp-org-01"
+    cluster_name: "lp-org-02"
     cluster_provider: "google"
     google_project: "puski-test-194413"
     google_node_count: "1"
     google_gke_version: "1.9.4-gke.1"
     log_level: debug
-    cluster_state: deleted
+#    cluster_state: deleted
 
     secrets: [plugin_endpoint, plugin_token, plugin_secret_id]
 
